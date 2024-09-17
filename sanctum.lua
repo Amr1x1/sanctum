@@ -12,15 +12,10 @@ local range = 25
 local types = {5}
 local sleep = 50
 local prayerOn = false
---local dist = 0
 local distPray = 2
 local distPray2 = 1
 local firstTime = true
 local counter = 0
-local asd = false
-local isLunar = false
-local counterX = 0
-local counterY = 0
 local projectile = nil
 local tickOn = false
 
@@ -33,7 +28,6 @@ local function prayRange()
     end
     API.DoAction_Ability("Deflect Ranged", 1, API.OFF_ACT_GeneralInterface_route)
     print("Praying Ranged")
-    --API.RandomSleep2(100, 100, 100)
 end
 
 local function prayMage()
@@ -42,7 +36,6 @@ local function prayMage()
     end
     API.DoAction_Ability("Deflect Magic", 1, API.OFF_ACT_GeneralInterface_route)
     print("Praying Magic")
-    --API.RandomSleep2(100, 100, 100)
 end
 
 local function prayMelee()
@@ -51,7 +44,6 @@ local function prayMelee()
     end
     API.DoAction_Ability("Deflect Melee", 1, API.OFF_ACT_GeneralInterface_route)
     print("Praying Melee")
-    --API.RandomSleep2(100, 100, 100)
 end
 
 local function praySoulSplit()
@@ -60,7 +52,6 @@ local function praySoulSplit()
     end
     API.DoAction_Ability("Soul Split", 1, API.OFF_ACT_GeneralInterface_route)
     print("SoulSplit")
-    --API.RandomSleep2(100, 100, 100)
 end
 
 
@@ -155,11 +146,9 @@ local function getKezalamProjectiles()
             if not tickOn then
                 prayerOn = true
                 tickOn = true
-                --UTILS.countTicks(1)
                 prayMelee()
                 UTILS.countTicks(1)
             end
-            --return
         end
     end
 
@@ -203,7 +192,7 @@ local function getVermyxProjectiles()
     end
 
 
-    --distPray = 2
+
 
     if prayerOn then return end
 
@@ -235,7 +224,7 @@ local function getVermyxProjectiles()
         print("counter = " .. counter)
     end
 
-    if dist > distPray and counter < 6 then --distPray
+    if dist > distPray and counter < 6 then 
         return
     end
     
