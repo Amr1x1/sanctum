@@ -1,11 +1,8 @@
-print("Run Lua script Test.")
+print("Sanctum ED5 Prayer Flicker")
 
 local API = require("api")
 local UTILS = require("utils")
 
-local LODESTONES = require("lodestones")
-local startTime = os.time()
-local idleTime = os.time()
 
 local obj = {7714, 7718}
 local range = 25
